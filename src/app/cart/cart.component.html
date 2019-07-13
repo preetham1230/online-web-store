@@ -1,0 +1,30 @@
+<a href="/home" class="btn btn-primary" style="margin-left: 70px">Click here to go to home page</a>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col">ID</div>
+    <div class="col">Desc</div>
+    <div class="col">Price</div>
+    <div class="col"></div>
+  </div>
+
+  <div>
+    <div class="row pt-4" *ngFor="let y of cartItems">      
+        <div *ngIf="y.Price!=0" class="col">{{y.ID}}</div>
+        <div *ngIf="y.Price!=0" class="col">{{y.PromptForDesc}}</div>
+        <div *ngIf="y.Price!=0" class="col">{{y.Price}}</div> 
+        <div *ngIf="y.Price!=0" class="col"><button class="btn btn-primary" (click)="removeItem(y)">Remove</button></div>     
+    </div>
+  </div>  
+
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="displayprice col">
+        Total Price {{totalPrice}}
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+</div>

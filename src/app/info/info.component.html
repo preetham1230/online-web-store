@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" *ngIf="alertmsg" style="top: 20px; position: sticky ">
+  <div class="alert alert-success col-lg-4">
+  <h4>Item added to cart</h4>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      
+    </div>
+    <div class="container pb-5">
+        <div class="row" style="float: right">
+         
+          <p>Go To Cart</p>
+            <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
+          
+        </div>
+      
+      </div>
+      
+    <app-storedetails></app-storedetails>
+  
+      <div class="container">
+          <div class="">
+            <div *ngFor="let d of catData" class="mt-5">
+              <b class="">{{d.Category.Desc}} </b>
+              <div class="row mt-4">
+                <div *ngFor="let x of d.Category.Items" class="col-lg-4">
+                  <div style="background: gray">
+                      <div>Prompt: {{x.Item.PromptForDesc}}</div>
+                      <div>Desc : {{x.Item.desc}}</div>
+                      <div>Price : {{x.Item.Price}}</div>
+                  </div>
+                  <div class="mt-2 mb-4">
+                    <button class="btn btn-primary" (click)="addItem(x)">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+  </div> 
+  
+  

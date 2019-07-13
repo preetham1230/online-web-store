@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <div class="row" *ngFor="let y of store">
+          <div class="col-lg-6">
+                <div>{{y.desc}} </div>
+                <div>{{y.openDateTime}}</div>
+                <div>{{y.closeDateTime}}</div>
+          </div>
+          <div class="col-lg-6">
+            <h3>Store Hours</h3>
+            <div *ngFor="let  i of y.hours">
+              <div>{{i.name}}-- {{i.hours}}</div> 
+            </div>  
+          </div>
+      </div>    
+  </div>
+  
+
+</div>
